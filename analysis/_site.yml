@@ -1,7 +1,7 @@
-name: "stats_2019_lecture_2"
+name: stats_2019_lecture_2
 output_dir: ../docs
 navbar:
-  title: "stats_2019_lecture_2"
+  title: stats_2019_lecture_2
   left:
   - text: Home
     href: index.html
@@ -9,6 +9,10 @@ navbar:
     href: about.html
   - text: License
     href: license.html
+  right:
+  - icon: fa-github
+    text: Source code
+    href: https://github.com/Allen Zhu/stats_2019_lecture_2
 output:
   workflowr::wflow_html:
     toc: yes
