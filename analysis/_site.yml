@@ -12,7 +12,7 @@ navbar:
   right:
   - icon: fa-github
     text: Source code
-    href: https://github.com/allenczhu/summerstats2019
+    href: https://github.com/allenczhu/stats_2019_lecture_2
 output:
   workflowr::wflow_html:
     toc: yes
