@@ -1,5 +1,5 @@
 name: stats_2019_lecture_2
-output_dir: ../public
+output_dir: ../docs
 navbar:
   title: stats_2019_lecture_2
   left:
@@ -10,9 +10,9 @@ navbar:
   - text: License
     href: license.html
   right:
-  - icon: fa-gitlab
+  - icon: fa-github
     text: Source code
-    href: https://gitlab.com/allenczhu/summerstats2019
+    href: https://github.com/allenczhu/summerstats2019
 output:
   workflowr::wflow_html:
     toc: yes
