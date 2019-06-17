@@ -7,9 +7,188 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
-asdfasdfasdfsa
-Click on this [link](index.html) to see the home page. 
+## Probability Theory
+
+### Definitions and Introductions
+An ensemble is a set of of probabilities describing a
+particular random process. An ensemble is defined by:
+
+* $x$, the value of a random variable
+* $A_x=\{a_1, a_2, a_3, ..., a_i\}$
+* $P_x=\{p_1, p_2, p_3, ..., p_i\}$
+
+$A_x$ is the sample space. The sample space of an experiment is the set of all possible outcomes of that experiment.
+
+
+An experiment is a situation involving chance or probability that leads to results called outcomes.	Probability is the measure of how likely an event is.	An outcome is the result of a single trial of an experiment. An event is one or more outcomes of an experiment.	
+
+For example: if your experiment is to roll a fair, 6-sided die, then the possible outcomes are landing on 1, 2, 3, 4, 5, or 6.
+One event of this experiment is rolling a 5.
+The probability of rolling a 5 is one sixth.
+
+Rolling a 7 is an example of an impossible event. Therefore, the probability is zero. Rolling a number less than 7 is certain to occur. This is an example of a certain event. The probability of a certain event is 1.
+
+All probabilities have to be be positive and add up to 1. The sum of the probabilities of the distinct outcomes within a sample space is 1.
+
+$P(x=a_i) = p_i$, where $p_i≥0$.
+
+$$
+\sum_{a_i \in A_x} p(x=a_i) = 1
+$$
+
+Example: probability of finding a certain nucleotide (A, T, C, or G) in the human genome.
+$$
+p_A = 0.28 \\
+p_T = 0.28 \\
+p_C = 0.22 \\
+p_G = 0.22 \\
+$$
+
+### Complement of an Event
+
+The complement of an event $A$ is the set of all outcomes in the sample space that are not included in the outcomes of event $A$. 
+The complement of event $A$ is represented by $\bar{A}$.
+
+Given the probability of an event, the probability of its complement can be found by subtracting the given probability from 1.
+$$
+P(\bar{A}) = 1-P(A)
+$$
+
+### Mutually Exclusive Events
+
+Two events are mutually exclusive if they cannot occur at the same time (i.e., they have no outcomes in common).
+
+Example: A single 6-sided die is rolled. What is the probability of rolling an odd number or an even number?
+
+#### Addition Rules
+
+Addition Rule 1: When two events, A and B, are mutually exclusive, the probability that A or B will occur is the sum of the probability of each event.
+
+P(A or B) = P(A) + P(B)
+
+Additional Rule 2: When two events, A and B, are non-mutually exclusive, the probability that A or B will occur is:
+
+P(A or B) = P(A) + P(B) - P(A and B)
+
+### Independent and Dependent Events
+Two events, A and B, are independent if the fact that A occurs does not affect the probability of B occurring.
+
+Two events are dependent if the outcome or occurrence of the first affects the outcome or occurrence of the second so that the probability is changed.
+
+### Joint Probabilities
+
+* Joint Probability: $P(x, y)$
+
+If $x$ and $y$ are independent, then $P(x,y) = P(x) P(y)$
+
+* Marginal Probability: 
+$$
+P(x) = \sum_{y} P(x,y)
+$$
+
+A table of single-strand frequencies of human genes:
+
+|     |     | 2nd   |       |       |       |      |
+|-----|-----|-------|-------|-------|-------|------|
+|     |     | A     | C     | G     | T     | Sum  |
+| 1st | A   | 0.069 | 0.057 | 0.077 | 0.05  | 0.25 |
+|     | C   | 0.078 | 0.077 | 0.035 | 0.071 | 0.26 |
+|     | G   | 0.078 | 0.070 | 0.075 | 0.047 | 0.27 |
+|     | T   | 0.029 | 0.058 | 0.081 | 0.048 | 0.21 |
+|     | Sum | 0.25  | 0.26  | 0.27  | 0.21  |      |
+
+### Conditional Probability
+The conditional probability of an event B in relationship to an event A is the probability that event B occurs given that event A has already occurred. The notation for conditional probability is P(B|A) [pronounced as The probability of event B given A].
+
+
+The probability of $x$ given $y$ is calculated as:
+
+$$
+P(x|y) = \frac{P(x,y)}{P(y)}
+$$
+
+### Probability Rules
+
+* Product Rule (Chain Rule):
+$$
+P(x,y) = P(x|y)P(y)
+$$
+
+* Sum Rule
+$$
+\begin{aligned}
+P(x) &= \sum_{y} P(x,y) \\
+&=\sum_{y} P(x|y)P(y)
+\end{aligned}
+$$
+
+* Bayes' Theorem
+
+Bayes' Theorem tells you how ot switch the order of variables in a conditional probability (how to convert $P(x|y)$ into $P(y|x))$.
+
+$$
+P(y|x) = \frac{P(x|y)P(y)}{P(x)}
+$$
+
+$$
+P(y|x) = \frac{P(x|y)P(y)}{\sum_{y}P(x|y)P(y)}
+$$
+
+### Exercise
+A rare disease that affects 0.1% of the population. You take a test, which is marketed to be 99% correct,
+ i.e., in 99/100 cases test shows positive when user
+ actually has disease, and in 99/100 cases test shows
+ negative when user actually does not have disease. 
+ 
+ The test gives you a positive result. What is the probability
+ that you have the disease given the test result? 
+
+#### Solution
+Write down all the probabilities:
+
+* $P(disease) = 0.001$
+* $P(test\ positive|disease) = 0.99$
+* $P(test\ negative|no\ disease) = 0.99$
+
+We want to find $P(disease|test\ positive)$.
+
+We can use Bayes' rule.
+
+$$
+P(disease|test\ positive) = \frac{P(test\ positive|disease)P(disease)}
+{P(test\ positive)}
+$$
+
+Use the sum rule to obtain $P(test\ positive)$.
+
+$$
+\begin{aligned}
+P(test\ positive) &=P(test\ positive|disease)P(disease)\\ 
+&+P(test\ positive|no\ disease)P(no\ disease)\\
+&=(0.99 × 0.001) + (0.01 × 0.999)
+=0.01098
+\end{aligned}
+$$
+
+Plug this into Bayes' theorem.
+
+$$
+\begin{aligned}
+P(disease|test\ positive) = \frac{0.99 × 0.001}
+{0.01098}
+=0.09
+\end{aligned}
+$$
+
+Therefore the actual probability of you having
+the disease given the test result is only 9%, so
+it is unlikely you are diseased. 
+
+
+## Probability Distributions
+
+
+
 ```{r}
 
 
