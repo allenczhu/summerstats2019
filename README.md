@@ -1,4 +1,5 @@
-# stats_2019_lecture_2
+# MSTP Statistics - Summer 2019
+## Allen Zhu
 
 A [workflowr][] project.
 
